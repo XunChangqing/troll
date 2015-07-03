@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  request_at: 2015-07-02 08:23:59
+  finish_at: 2015-07-02 08:23:59
+  result: 1
+  check_result: 1
+  checker_id: 1
+  check_at: 2015-07-02 08:23:59
+  url: MyString
+
+two:
+  owner_id: 1
+  request_at: 2015-07-02 08:23:59
+  finish_at: 2015-07-02 08:23:59
+  result: 1
+  check_result: 1
+  checker_id: 1
+  check_at: 2015-07-02 08:23:59
+  url: MyString

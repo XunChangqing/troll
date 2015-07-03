@@ -1,0 +1,31 @@
+- provide :title, t("user.index")
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th= t("user.email")
+      %th= t("user.name")
+      %th= t("user.created_at")
+      -#%th= t("user.updated_at")
+      -if can? :manage, User
+        %th= t("user.operations")
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td
+          =link_to user_path(user) do
+            =user.email
+        %td= user.name
+        %td= l user.created_at
+        -#%td= l user.updated_at
+        -if can? :manage, User
+          %td
+            %ul.list-inline
+              %li= link_to t("user.edit"), edit_user_path(user)
+              %li= link_to t("user.destroy"), user, method: :delete, data: {confirm: "Are you sure?"}
+
+%br
+
+-if can? :manage, User
+  =link_to t("user.new"), new_user_path, class: "btn btn-lg btn-primary", role: "button"

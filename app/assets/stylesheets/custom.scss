@@ -1,0 +1,137 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* footer */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  a {
+    color: #555;
+    hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    margin-right: 45px;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+.center{
+  text-align: center
+}
+
+td.red{
+  color: red
+}
+
+/*.center-block{*/
+  /*display: block;*/
+/*}*/
+
+$zhibolink-color: $brand-primary;
+td, 
+li{
+  a{
+    color: $zhibolink-color;
+    text-decoration: none;
+    &:visited{
+      color: $zhibolink-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.carousel-control-task{
+  @include opacity(1);
+  /*&.right*/
+  /*{*/
+    /*width: 30%;*/
+  /*}*/
+  &:hover,
+  &:focus{
+    color: red;
+  }
+  &.left{
+    /*border: 1px solid green;*/
+    width: 7%;
+  }
+  &.right{
+    /*border: 1px solid green;*/
+    width: 7%;
+  }
+  /*&.left,*/
+  /*&.right{*/
+    /*@include gradient-horizontal($start-color: rgba(0,0,0,0.2), $end-color: rgba(0,0,0,0.2));*/
+  /*}*/
+}
+
+$middle-width: 70%;
+.carousel-control-normal{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30%;
+  right: 7%;
+  /*@inlcude opacity(0.1);*/
+  text-align: center;
+  text-shadow: $carousel-text-shadow;
+  color: $carousel-control-color;
+  /*background-color: rgba(0,0,0,0.5);*/
+  border:1px solid blue;
+  &:hover,
+  &:focus{
+    outline: 0;
+    color: red;
+    background-color: rgba(0,0,0,0.1);
+    text-decoration: none;
+  }
+  &.unnormal{
+    left: 7%;
+    right: 70%;
+    border: 1px solid red;
+  }
+}
+
+.carousel-tag{
+  font-size: 20px;
+  position: absolute;
+  top: 10%;
+  z-index: 15;
+  text-align: center;
+  color: red;
+  /*bottom: 0;*/
+  left: 50%;
+  /*right: 7%;*/
+  /*.glyphicon-ok{*/
+  /*}*/
+  p{
+    font-size: 20px;
+  }
+}

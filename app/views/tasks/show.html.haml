@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Owner:
+  = @task.owner_id
+%p
+  %b Request at:
+  = @task.request_at
+%p
+  %b Finish at:
+  = @task.finish_at
+%p
+  %b Result:
+  = @task.result
+%p
+  %b Check result:
+  = @task.check_result
+%p
+  %b Checker:
+  = @task.checker_id
+%p
+  %b Check at:
+  = @task.check_at
+%p
+  %b Url:
+  = @task.url
+
+= link_to 'Edit', edit_task_path(@task)
+\|
+= link_to 'Back', tasks_path

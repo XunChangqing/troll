@@ -1,0 +1,40 @@
+-#.row
+  -#.col-md-6.col-xs-6 
+    -#=button_to "OK", {action: "submit_task"}, params: {id: 0, result: 0}, remote: true, form: {"data-type" => "json"}, class: 'btn-lg btn-primary work-btn'
+  -#.col-md-4.col-xs-4 
+    -#=button_to "OK", {action: "submit_task"}, params: {id: 0, result: 0}, remote: true, form: {"data-type" => "json"}, class: 'work-btn btn-lg btn-danger'
+    -#-#=button_to "OK", {action: "submit_task"}, params: {id: 0, result: 1}, remote: true, form: {"data-type" => "json"}
+    -#-#%span.glyphicon.glyphicon-thumbs-down
+    -#-#%span.glyphicon.glyphicon-thumbs-up
+  -#.col-md-2.col-xs-2 
+    -#%span.glyphicon.glyphicon-ok
+    -#-#%span.glyphicon.glyphicon-remove
+-#-##carousel-example-generic.carousel.slide{"data-ride" => "carousel", "data-interval" => 0, "data-wrap" => "false", "data-keyboard"=>"true"}
+
+#carousel-example-generic.carousel.slide{ "data-interval" => 0, "data-wrap" => "false", "data-keyboard"=>"true"}
+  -#%ol.carousel-indicators
+    -#%li.active{"data-target"=>"#carousel-example-generic", "data-slide-to" => "0"}
+    -#%li.active{"data-target"=>"#carousel-example-generic", "data-slide-to" => "1"}
+    -#%li.active{"data-target"=>"#carousel-example-generic", "data-slide-to" => "2"}
+
+  .carousel-inner{role: "listbox"}
+    .item.active
+      -#%img{alt: "first", src: "http://y1.ifengimg.com/a/2015_27/600f76858444336_size213_w1024_h681.jpg", "data-holder-rendered" => "true"}
+      %img{alt: "first", src: "http://y1.ifengimg.com/a/2015_27/600f76858444336_size213_w1024_h681.jpg"}
+    .item
+      %img{alt: "first", src: "http://y1.ifengimg.com/a/2015_20/876db9ede4ee79a_size27_w258_h258.jpg", "data-holder-rendered" => "true"}
+    .item
+      %img{alt: "first", src: "http://y2.ifengimg.com/a/2014_42/9b90289da8dc510.jpg", "data-holder-rendered" => "true"}
+  
+  %a.left.carousel-control.carousel-control-task{href: "#carousel-example-generic", role: "button", "data-slide" => "prev"}
+    %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "false"}
+      %span.sr-only Previous
+  %a.right.carousel-control.carousel-control-task{href: "#carousel-example-generic", role: "button", "data-slide" => "next"}
+    %span.glyphicon.glyphicon-chevron-right{"aria-hidden" => "false"}
+      %span.sr-only Next
+  -#%a.carousel-control-normal{href: "#carousel-example-generic", role: "button", "data-slide" => "prev"}
+  %a#normal-pic-btn.carousel-control-normal{role: "button"}
+  %a#unnormal-pic-btn.carousel-control-normal.unnormal{role: "button"}
+  #pic-status-tag.carousel-tag
+    %span.glyphicon.glyphicon-ok
+    %p normal
