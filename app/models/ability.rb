@@ -10,6 +10,11 @@ class Ability
     else
       can :read, User
     end
+    if user.is?('user.user_admin')
+      can :manage, Task
+    else
+      can :read, User
+    end
     #   if user.admin?
     #     can :manage, :all
     #   else

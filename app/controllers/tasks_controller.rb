@@ -1,30 +1,39 @@
 class TasksController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def do_tasks
-    @task = Task.new
+    @tasks = current_user.get_tasks 1 
   end
 
   def request_tasks
     #@condition = {}
     #@condition[:orgnization] = current_user.orginization unless current_user.orgnization == User::ORGS[0]
     #@condition[:status] = params[:status] if params[:status] and User::STATUS.include? params[:status]
-    params[:number]
+    #params[:number]
+    #@tasks = current_user.reuqest_new_tasks params[:number]
   end
 
   def submit_task
-    Rails.logger.info "***************"
-    Rails.logger.info task_params
-    @task = Task.find(id: task_params[:task_id])
-    Rails.logger.info @task
+    #Rails.logger.info "***************"
+    #Rails.logger.info task_params
+    tparams = task_params
+    @task = Task.find(tparams[:task_id])
+    tparams.delete :task_id
+    #Rails.logger.info @task
+    @task.update(tparams)
+    @task = current_user.request_new_tasks[0]
     respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
-      else
-        format.html { render :edit }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
+      format.html {
+        #byebug
+        redirect_to @task, notice: 'Task was successfully updated.' 
+      }
+      #format.json { render :show, status: :ok, location: @ntask }
+      format.json { 
+        render :json => @task
+        #render :show, status: :ok, location: @task 
+      }
     end
   end
 
